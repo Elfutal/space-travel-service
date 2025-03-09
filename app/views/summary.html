@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.gds.gov.uk/assets/govuk-template.css">
+    <title>Space Travel Service - Summary</title>
+</head>
+<body>
+    <h1>Check Your Answers</h1>
+    <p>Full Name: <span id="full-name"></span></p>
+    <p>Address: <span id="address"></span></p>
+    <p>Destination: <span id="destination"></span></p>
+    
+    <button class="govuk-button" onclick="submitForm()">Submit</button>
+
+    <script>
+        // Function to retrieve and display data from URL parameters
+        const params = new URLSearchParams(window.location.search);
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('full-name').textContent = params.get('full-name') || 'N/A';
+            document.getElementById('address').textContent = params.get('address') || 'N/A';
+            document.getElementById('destination').textContent = params.get('destination') || 'N/A';
+        }
+
+        // Call the function to display data
+        getQueryParams();
+
+        // Function to handle form submission
+        function submitForm() {
+            alert('Your booking has been submitted!');
+            // Here you can add further logic to handle the submission
+        }
+    </script>
+</body>
+</html>
