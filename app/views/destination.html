@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Select Your Destination</h1>
-    <form action="summary.html" method="GET">
+    <form action="summary.html" method="GET" onsubmit="return validateForm()">
         <label>
             <input type="radio" name="destination" value="Moon" required> Moon
         </label>
@@ -17,6 +17,8 @@
         </label>
         
         <button type="submit" class="govuk-button">Continue</button>
+        <!-- Removed redundant hidden input fields -->
+        <input type="hidden" name="destination" value="">
     </form>
 </body>
 </html>

@@ -16,11 +16,12 @@
 
     <script>
         // Function to retrieve and display data from URL parameters
+        const params = new URLSearchParams(window.location.search);
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
-            document.getElementById('full-name').textContent = params.get('full-name');
-            document.getElementById('address').textContent = params.get('address');
-            document.getElementById('destination').textContent = params.get('destination');
+            document.getElementById('full-name').textContent = params.get('full-name') || 'N/A';
+            document.getElementById('address').textContent = params.get('address') || 'N/A';
+            document.getElementById('destination').textContent = params.get('destination') || 'N/A';
         }
 
         // Call the function to display data
